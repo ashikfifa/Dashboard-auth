@@ -8,21 +8,23 @@ import {
     FaThList
 } from "react-icons/fa";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [activeItem, setActiveItem] = useState(null);
+    const [activeItem, setActiveItem] = useState('Profile');
+    const {onSelectMenuItem, role} = props
 
-    useEffect(() => {
-        const storedActiveItem = localStorage.getItem('activeItem');
-        if (storedActiveItem) {
-            setActiveItem(storedActiveItem);
-        }
-    }, []);
+    // useEffect(() => {
+    //     const storedActiveItem = localStorage.getItem('activeItem');
+    //     if (storedActiveItem) {
+    //         setActiveItem(storedActiveItem);
+    //     }
+    // }, []);
 
     const toggle = () => setIsOpen(!isOpen);
 
     const handleItemClick = (name) => {
         setActiveItem(name);
+        onSelectMenuItem(name)
         localStorage.setItem('activeItem', name);
     };
 
@@ -37,7 +39,8 @@ const Sidebar = () => {
         },
         {
             name: "User List",
-            icon: <FaThList />
+            icon: <FaThList />,
+            disabled: role === 'user'
         }
     ];
 

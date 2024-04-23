@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Profile=()=> {
+const Profile=(props)=> {
+  const {role}=props
   return (
     <div>
-      profile page
+      profile page {role}
     </div>
   )
 }

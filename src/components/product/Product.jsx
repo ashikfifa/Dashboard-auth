@@ -1,9 +1,27 @@
 import React from 'react'
-
+import './product.scss'
 const Product=()=> {
   return (
-    <div>
-      product page
+    <div className='container'>
+      <div className='productShowcasing'>
+      <div className='cardProduct'>
+        <img src=''/>
+        <p>baby</p>
+        <p>Price</p>
+      </div>
+
+      <div className='cardProduct'>
+        <img src=''/>
+        <p>baby</p>
+        <p>Price</p>
+      </div>
+
+      <div className='cardProduct'>
+        <img src=''/>
+        <p>baby</p>
+        <p>Price</p>
+      </div>
+      </div>
     </div>
   )
 }

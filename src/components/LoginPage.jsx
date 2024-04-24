@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 function LoginPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {setRole} = props
+  const { setRole } = props;
 
   const navigate = useNavigate();
 
@@ -26,13 +26,12 @@ function LoginPage(props) {
 
     dummyData.users?.forEach((user) => {
       if (email === user.email && password === user.password) {
-        if(email === 'admin@example.com' && password==='admin'){
-          setRole('admin')
-          localStorage.setItem('userRole', 'admin');
-        }
-        else{
-          setRole('user')
-          localStorage.setItem('userRole', 'user');
+        if (email === "admin@example.com" && password === "admin") {
+          setRole("admin");
+          localStorage.setItem("userRole", "admin");
+        } else {
+          setRole("user");
+          localStorage.setItem("userRole", "user");
         }
         navigate("/dashboard");
       }

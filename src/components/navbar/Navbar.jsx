@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    localStorage.clear("userRole");
+    navigate("/");
+  };
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
@@ -74,9 +82,13 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="d-flex justify-content-end align-items-center">
-          <a href="#login" className="nav-link">
-            Log In / Register
-          </a>
+          <div
+            onClick={handleLogOut}
+            style={{ cursor: "pointer" }}
+            className="nav-link"
+          >
+            Log out
+          </div>
           <span className="mx-2">|</span>
           <a href="/" className="nav-link">
             Book Table

@@ -39,7 +39,7 @@ function App() {
                   <Sidebar role={role} onSelectMenuItem={handleSelectMenuItem}/>
                 {selectedMenuItem==='Profile' && <Profile role={role} /> }  
                 {selectedMenuItem==='Product' && <Product /> }  
-                {selectedMenuItem==='User List' && <UserList /> }  
+                {selectedMenuItem==='User List' && role==='admin' && <UserList /> }  
                 </div>
               </>
             }

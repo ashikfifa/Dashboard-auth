@@ -48,9 +48,9 @@ const Sidebar = (props) => {
         <div>
             <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
                 <div className="top_section">
-                    <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">Dashb</h1>
+                    <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">Tasks </h1>
                     <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="bars">
-                        <FaBars onClick={toggle} />
+                        <FaBars style={{cursor:'pointer'}} onClick={toggle} />
                     </div>
                 </div>
                 {

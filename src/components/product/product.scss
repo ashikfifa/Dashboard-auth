@@ -1,9 +1,14 @@
-.cardProduct{
+.cardProduct {
     padding: 12px;
-    border: 1px solid black;
-}
-.productShowcasing{
+    width: calc(25% - 20px);
+    border: 1px solid rgb(241, 230, 230);
+  }
+  
+  .productShowcasing {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 10px;
-}
+    margin-top: 3%;
+  }
+  

@@ -1,10 +1,22 @@
-.cards {
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    height: 300px;
+.logInCards {
+  border-radius: 10px;
+  padding: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 621px;
+  height: 300px;
+
+  .label{
+    font-weight: 600;
   }
-  .loginBtn{
-    font-weight: 600 !important;
-  }
+}
+.loginBtn {
+  font-weight: 600 !important;
+}
+._login_parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  flex-direction: column;
+}

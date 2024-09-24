@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -13,6 +14,8 @@ const Navbar = () => {
     navigate("/");
   };
 
+  const isOpen = useSelector((state) => state.sidebar.isOpen);
+
   const handleScroll = () => {
     if (window.scrollY > 100) {
       setIsFixed(true);
@@ -24,6 +27,7 @@ const Navbar = () => {
   const toggleMenuHandler = () => {
     setToggleMenu(!toggleMenu);
   };
+  
 
   return (
     <nav
@@ -81,19 +85,21 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="d-flex justify-content-end align-items-center">
-          <div
-            onClick={handleLogOut}
-            style={{ cursor: "pointer" }}
-            className="nav-link"
-          >
-            Log out
+      
+          <div className="d-flex justify-content-end align-items-center">
+            <div
+              onClick={handleLogOut}
+              style={{ cursor: "pointer" }}
+              className="nav-link"
+            >
+              Log out
+            </div>
+            <span className="mx-2">|</span>
+            <a href="/" className="nav-link">
+              Book Table
+            </a>
           </div>
-          <span className="mx-2">|</span>
-          <a href="/" className="nav-link">
-            Book Table
-          </a>
-        </div>
+      
       </div>
     </nav>
   );

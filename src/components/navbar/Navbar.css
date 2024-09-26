@@ -1,4 +1,15 @@
-.fontNav{
-    color: black;
-    font-weight: 600;
+.fontNav {
+  color: black;
+  font-weight: 600;
+}
+.logoutNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 981px) {
+  .logoutNav {
+    display: none;
+  }
 }

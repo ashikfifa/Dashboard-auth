@@ -27,7 +27,6 @@ const Navbar = () => {
   const toggleMenuHandler = () => {
     setToggleMenu(!toggleMenu);
   };
-  
 
   return (
     <nav
@@ -85,21 +84,20 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-      
-          <div className="d-flex justify-content-end align-items-center">
-            <div
-              onClick={handleLogOut}
-              style={{ cursor: "pointer" }}
-              className="nav-link"
-            >
-              Log out
-            </div>
-            <span className="mx-2">|</span>
-            <a href="/" className="nav-link">
-              Book Table
-            </a>
+
+        <div className="logoutNav">
+          <div
+            onClick={handleLogOut}
+            style={{ cursor: "pointer" }}
+            className="nav-link"
+          >
+            Log out
           </div>
-      
+          <span className="mx-2">|</span>
+          <a href="/" className="nav-link">
+            Book Table
+          </a>
+        </div>
       </div>
     </nav>
   );

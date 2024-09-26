@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [isFixed, setIsFixed] = useState(false);
 
   const navigate = useNavigate();
 
@@ -14,26 +12,14 @@ const Navbar = () => {
     navigate("/");
   };
 
-  const isOpen = useSelector((state) => state.sidebar.isOpen);
-
-  const handleScroll = () => {
-    if (window.scrollY > 100) {
-      setIsFixed(true);
-    } else {
-      setIsFixed(false);
-    }
-  };
-
   const toggleMenuHandler = () => {
     setToggleMenu(!toggleMenu);
   };
-  
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-dark ${
-        isFixed ? "fixed-top" : ""
-      }`}
+      className="navbar navbar-expand-lg navbar-dark
+        relative"
       style={{ backgroundColor: "#ffc107" }}
     >
       <div className="container-fluid">
@@ -85,21 +71,16 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-      
-          <div className="d-flex justify-content-end align-items-center">
-            <div
-              onClick={handleLogOut}
-              style={{ cursor: "pointer" }}
-              className="nav-link"
-            >
-              Log out
-            </div>
-            <span className="mx-2">|</span>
-            <a href="/" className="nav-link">
-              Book Table
-            </a>
+
+        <div className="logoutInNav">
+          <div onClick={handleLogOut} className="nav-link">
+            Log out
           </div>
-      
+          <span className="mx-2">|</span>
+          <a href="/" className="nav-link">
+            Book Table
+          </a>
+        </div>
       </div>
     </nav>
   );

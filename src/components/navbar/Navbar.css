@@ -2,3 +2,15 @@
     color: black;
     font-weight: 600;
 }
+
+.logoutInNav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+    .logoutInNav{
+        display: none;
+    }
+  }
